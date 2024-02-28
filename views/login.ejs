@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Font Awesome CDN-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>JavaScript CURD</title>
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
+    <div class="popup active">
+      <form action="/connect" method="post" id="myForm">
+        <header>
+          <h2 class="modalTitle">Database Connection</h2>
+        </header>
+        <div class="form-container">
+          <div class="inputFieldContainer">
+            <div class="form_control">
+              <label for="host">Host:</label>
+              <input type="text" id="host" name="host" value="localhost" required>
+            </div>
+
+            <div class="form_control">
+              <label for="port">Port:</label>
+              <input type="text" id="port" name="port" value="5432" required>
+            </div>
+
+            <div class="form_control">
+              <label for="dbName">Database Name:</label>
+              <input type="text" id="dbName" name="dbName" required>
+            </div>
+
+            <div class="form_control">
+              <label for="schema">Schema:</label>
+              <input type="text" id="schema" name="schema" value="public" required>
+            </div>
+
+            <div class="form_control">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" value="postgres" required>
+            </div>
+
+            <div class="form_control">
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required>
+            </div>
+        </div>
+        </div>
+        <footer class="popupFooter">
+          <button type="submit" class="submitBtn">Submit</button>
+        </footer>
+      </form>
+    </div>
+  </body>
+</html>

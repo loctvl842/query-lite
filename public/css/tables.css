@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins:wght@100;200;300;400&display=swap");
+
+:root {
+  --dark1: #0000004d;
+  --dark2: #181c20;
+  --dark3: #212529;
+  --dark4: #2d3135;
+  --dark5: #424549;
+  --dark6: #404346;
+  --dark7: #9c9c9c;
+  --dark8: #dae0e7;
+  --dark9: #262a2e;
+  --red1: #902e31;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: linear-gradient(var(--red1) 100%, var(--dark2) 50%);
+}
+
+.container {
+  padding: 20px;
+  box-shadow: 3px 3px 20px var(--dark1);
+  background: var(--dark3);
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+.card {
+  border: 1px solid var(--dark6);
+  border-radius: 10px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--dark8);
+  font-size: 1.5rem;
+}
+
+.gridContainer a {
+  text-decoration: none;
+  color: var(--dark8);
+  display: block;
+}
+
+.card:hover {
+  background: var(--dark4);
+  cursor: pointer;
+  border: 1px solid var(--dark8);
+}
