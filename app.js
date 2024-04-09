@@ -125,7 +125,6 @@ app.get("/tables/:tableName", async (req, res) => {
       FROM information_schema.columns
       WHERE table_name = '${tableName}' AND table_schema = '${pool.options.schema}';
     `;
-    console.log("columnNamesQuery", columnNamesQuery);
 
     const query = `
       SELECT *
@@ -161,7 +160,7 @@ app.get("/tables/:tableName", async (req, res) => {
   }
 });
 
-const port = 8402;
+const port = 2345;
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

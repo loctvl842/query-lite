@@ -1,14 +1,15 @@
-FROM node:20.10.0
-
+FROM node:20.10.0 AS deps
 WORKDIR /app
 
-COPY package.json ./
-RUN yarn set version berry
+COPY .yarn ./.yarn
+COPY package.json .yarnrc.yml yarn.lock*  ./
+RUN yarn install --immutable
 
-# Install dependencies
-COPY yarn.lock .yarn .yarnrc.yml ./
-RUN yarn install
+FROM node:20.10.0 AS runner
+WORKDIR /app
 
+COPY --from=deps /app/.yarn ./.yarn
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 CMD ["yarn", "start"]
